@@ -244,8 +244,12 @@ export const MobileLeapCosmosProvider = class MobileLeapCosmosProvider implement
     this.connectCallback = callback;
     this.chainId = chainId;
 
-    return {
+    console.log("oke")
 
+    return {
+      walletconnectUrl: this.walletConnect.uri,
+      iosUrl: `leapwallet://wcV2?${this.walletConnect.uri}`,
+      androidUrl: `intent://wcV2?${this.walletConnect.uri}#Intent;package=io.leapwallet.cosmos;scheme=leapwallet;end;`,
     };
   }
 
